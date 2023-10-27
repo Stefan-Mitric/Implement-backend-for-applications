@@ -1,0 +1,15 @@
+spring:
+  # DataSource properties
+  datasource:
+    url: jdbc:mysql://lx16.hoststar.hosting:3306/ch76252_csbe
+    username: ch76252_cas_sd
+    password: qf5kDh2akI34Nf6R1omYJ3GubU.
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  # Hibernate properties
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+springdoc:
+  default-produces-media-type: application/json
