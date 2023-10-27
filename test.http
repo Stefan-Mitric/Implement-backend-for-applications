@@ -1,0 +1,38 @@
+# ADMIN: Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJDc0JFIiwiaWF0IjoxNjk3ODg3NTAxLCJleHAiOjI5MzM5NDk2MDE3OTE5MzYsInN1YiI6ImphbmVfZG9lIn0.P_TVkZULqOS4371mrKngX9pPCd9lNszDWUiuCSVsNfU
+# USER:  Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJDc0JFIiwiaWF0IjoxNjk3ODg5MTc5LCJleHAiOjI5MzM5NTI1MDE1NTM5MjAsInN1YiI6ImpvaG5fZG9lIn0.1Fj_YBoJYpDVRxKrEULcYDlIukTMS2hgl2wztqVCs2U
+
+GET localhost:8080/persons
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJDc0JFIiwiaWF0IjoxNjk3ODg5MTc5LCJleHAiOjI5MzM5NTI1MDE1NTM5MjAsInN1YiI6ImpvaG5fZG9lIn0.1Fj_YBoJYpDVRxKrEULcYDlIukTMS2hgl2wztqVCs2U
+
+###
+
+GET localhost:8080/persons/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJDc0JFIiwiaWF0IjoxNjk3ODg3NTAxLCJleHAiOjI5MzM5NDk2MDE3OTE5MzYsInN1YiI6ImphbmVfZG9lIn0.P_TVkZULqOS4371mrKngX9pPCd9lNszDWUiuCSVsNfU
+
+###
+
+DELETE localhost:8080/persons/90
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJDc0JFIiwiaWF0IjoxNjk3ODg3NTAxLCJleHAiOjI5MzM5NDk2MDE3OTE5MzYsInN1YiI6ImphbmVfZG9lIn0.P_TVkZULqOS4371mrKngX9pPCd9lNszDWUiuCSVsNfU
+
+###
+
+POST localhost:8080/auth/registration
+Content-Type: application/json
+
+{
+  "lastName": "Mitric",
+  "firstName": "Stefan",
+  "userName": "Mitric_Stefan",
+  "password": "pw123457890"
+}
+
+
+###
+
+POST localhost:8080/auth/login
+Content-Type: application/json
+
+{
+  "userName": "Mitric_Stefan",
+  "password": "pw123457890"
+}
