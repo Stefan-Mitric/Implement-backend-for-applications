@@ -320,11 +320,11 @@ Letztendlich war die Erfahrung, obwohl stressig, eine wertvolle Lektion in Proje
 
 Die Entwicklung der API basierte auf einer Reihe von Best Practices und Richtlinien für das Design von RESTful APIs. Die folgenden Quellen haben wertvolle Einsichten und Anleitungen geboten, die zur Gestaltung einer strukturierten und sicheren API beigetragen haben:
 
-- Microsoft Azure Architecture Center: Präsentiert Hauptdesignprinzipien von RESTful APIs, einschließlich der Nutzung von Ressourcen und eindeutigen URIs für diese Ressourcen&#8203;``【oaicite:4】``&#8203;.
-- freeCodeCamp: Erläutert die Bedeutung von JSON als Standardformat für das Senden und Empfangen von Daten in APIs&#8203;``【oaicite:3】``&#8203;.
-- Stack Overflow Blog: Bietet eine Übersicht über Best Practices für REST API-Design, mit dem Ziel, APIs leicht verständlich, zukunftssicher, sicher und schnell zu gestalten&#8203;``【oaicite:2】``&#8203;.
-- Swagger: Diskutiert Best Practices im API-Design und stellt Tools zur Dokumentation und Entwicklung von REST APIs zur Verfügung&#8203;``【oaicite:1】``&#8203;.
-- TechTarget: Listet 16 Best Practices und Richtlinien für das Design von REST APIs auf, die Funktionalität und Flexibilität verbessern sollen&#8203;``【oaicite:0】``&#8203;.
+- Microsoft Azure Architecture Center: Präsentiert Hauptdesignprinzipien von RESTful APIs, einschließlich der Nutzung von Ressourcen und eindeutigen URIs für diese Ressourcen: https://learn.microsoft.com/azure/architecture/best-practices/api-design​.
+- freeCodeCamp: Erläutert die Bedeutung von JSON als Standardformat für das Senden und Empfangen von Daten in APIs: https://www.freecodecamp.org/news/rest-api-best-practices-rest-endpoint-design-examples/.
+- Stack Overflow Blog: Bietet eine Übersicht über Best Practices für REST API-Design, mit dem Ziel, APIs leicht verständlich, zukunftssicher, sicher und schnell zu gestalten https://stackoverflow.blog/2020/03/02/best-practices-for-rest-api-design/​.
+- Swagger: Diskutiert Best Practices im API-Design und stellt Tools zur Dokumentation und Entwicklung von REST APIs zur Verfügung: https://swagger.io/resources/articles/best-practices-in-api-design/​.
+- TechTarget: Listet 16 Best Practices und Richtlinien für das Design von REST APIs auf, die Funktionalität und Flexibilität verbessern sollen: https://www.techtarget.com/searchapparchitecture/tip/16-REST-API-design-best-practices-and-guidelines​.
 
 Diese Materialien waren eine unverzichtbare Grundlage für die erfolgreiche Umsetzung der API und haben maßgeblich dazu beigetragen, den hohen Anforderungen an Sicherheit und Funktionalität gerecht zu werden.
 
