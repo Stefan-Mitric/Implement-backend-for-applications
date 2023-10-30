@@ -124,7 +124,7 @@ Dokumentation
 - Angefangen die Endpoints zu Dokumentieren.
 
 DTO Dokumentation:
-```java
+```yaml
 @Data
 @Schema(description = "DTO für die Detailansicht einer ToDo-Liste") 
 public class ToDoListDetailDto {
