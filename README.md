@@ -246,10 +246,10 @@ In Spring
 In Spring kann man den BCryptPasswordEncoder verwenden, um Passwörter zu hashen und zu validieren.
 ```java
 // Hashing
-        BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
-        String hashedPassword = encoder.encode("plainPassword");
+      BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+      String hashedPassword = encoder.encode("plainPassword");
 // Validierung
-        boolean isPasswordMatch = encoder.matches("plainPassword",
+      boolean isPasswordMatch = encoder.matches("plainPassword",
 hashedPassword);
 ```
 
