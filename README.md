@@ -5,7 +5,7 @@
 - [Analyse](#analyse)
 - [Anforderungen](#anforderungen)
 - [Arbeitsjournal](#arbeitsjournal)
-- [Passworter](#Passworter)
+- [Passwort verschlüsseln / entschlüsseln validieren](#Passwort_verschlüsseln/entschlüsseln_validieren)
 - [Endpoints](#endpoints)
 - [OpenAPI](#openapi)
 - [Fazit](#fazit)
@@ -221,7 +221,7 @@ public class ToDoListDetailDto {
 #### Aktivität:
 - Angefangen mit der Dokumentation.
   
-## Passworter
+## Passwort verschlüsseln / entschlüsseln validieren
 
 Wie es funktioniert
 
