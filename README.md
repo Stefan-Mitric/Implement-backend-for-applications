@@ -5,6 +5,7 @@
 - [Analyse](#analyse)
 - [Anforderungen](#anforderungen)
 - [Arbeitsjournal](#arbeitsjournal)
+- [Passworter](#Passworter)
 - [Endpoints](#endpoints)
 - [OpenAPI](#openapi)
 - [Fazit](#fazit)
@@ -165,6 +166,91 @@ public class ToDoListDetailDto {
     } 
 }
 
+```
+
+---
+### Tag 5
+#### Aktivität:
+- Java Spring Security hizugefügt.
+- JJWT und Javax.xml.bind. Dependencies hinzugefügt.
+```java
+<dependency>
+    <groupId>javax.xml.bind</groupId>
+    <artifactId>jaxb-api</artifactId>
+    <version>2.3.1</version>
+</dependency>
+
+<dependency>
+    <groupId>io.jsonwebtoken</groupId>
+    <artifactId>jjwt</artifactId>
+    <version>0.9.1</version> <!-- Use the latest version -->
+</dependency>
+
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-security</artifactId>
+</dependency>
+```
+
+| Komponente             | Beschreibung                                                                                                                                                                                                                                                                                                                                                                          |
+|------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `AuthController`       | Stellt einen Endpoint zur Verfügung (z.B. `/auth/login`), der ein `LoginRequestDto` akzeptiert.                                                                                                                                                                                                                                                                                      |
+| `LoginRequestDto`      | Ein Data Transfer Object (DTO), das aus zwei Properties besteht: E-Mail/Passwort oder Username/Passwort.                                                                                                                                                                                                                                                                             |
+| `MyUserPrincipal`      | Erbt von `UserDetails` für die Java Spring Security Integration und repräsentiert das Benutzerobjekt, das dem SecurityContext übergeben wird. Enthält die Annotation `@Data` und implementiert die `UserDetails` Schnittstelle.                                                                                                                                                      |
+| `JwtRequestFilter`     | Erbt von `OncePerRequestFilter`. Verantwortlich für das Auslesen des JWT aus dem Authorization-Header, Überprüfung der Token-Validität, Benutzerladen mittels `UserService` und Zusammenstellung des `UserPrincipal` Objekts.                                                                                                                                                       |
+| `SecurityConfiguration`| Konfiguriert die Sicherheitseinstellungen mit der Annotation `@Configuration`. Enthält den `JwtRequestFilter` als `@Autowired` Bean. In der `filterChain` Methode werden Anpassungen wie das Implementieren des `JwtRequestFilter`, das Deaktivieren von CSRF und httpBasic sowie das Freigeben/Sperren von Endpoints vorgenommen.                                                        |
+| `UserService`          | Bietet Methoden, um Benutzer anhand von E-Mail-Adresse oder anderen Claims zu laden. Wichtige Methoden sind `getUserWithCredentials`, das ein `LoginRequestDto` gegen einen Benutzer eintauscht, und `findUserByEmail`, das einen Benutzer aufgrund der E-Mail-Adresse lädt.                                                                                                          |
+| `TokenWrapper`         | Ein DTO, das den JWT beinhaltet und bei `/auth/login` zurückgegeben wird. Besteht aus einem einzigen String `token`.                                                                                                                                                                                                                                                                  |
+| `OpenApiConfig`        | Konfiguration für OpenAPI/Swagger, die es ermöglicht, den Bearer Token in der Swagger-UI zu verwenden. Definiert ein `OpenAPI` Bean mit Sicherheitsschemen für Bearer Authentication.                                                                                                                                                                                                 |
+| `TokenService`         | Wird verwendet, um JWTs zu generieren, indem Benutzerinformationen als Token-Inhalte hinzugefügt werden. Bietet die Methode `generateToken`, die den Token als String zurückgibt und über `setClaim` zusätzliche Inhalte (payload) zum Token hinzufügen kann.                                                                                                                         |
+                                                                                                                                            
+#### Reflextion:
+- Alles verlief Reibunglose ohne fehler.
+---
+
+### Tag 6
+#### Aktivität:
+- Alles Verloren weil ich das ganze projekt gelöscht habe und es nicht auf GitHub hatte.
+- Von vorne angefangen.
+- 
+  #### Reflextion:
+- Immer auf GitHub hochladen damit ich einen Backup habbe.
+  
+---
+### Tag 7
+#### Aktivität:
+- Angefangen mit der Dokumentation.
+  
+## Passworter
+
+Wie es funktioniert
+
+Verschlüsselung: Wenn ein Benutzer ein Passwort erstellt oder ändert, wird dieses Passwort durch einen Algorithmus geschickt, der es in einen neuen, unleserlichen Text verwandelt. Dieser Vorgang heißt "Hashing".
+
+Speichern: Dieser unleserliche Text, also der Hash, wird dann in der Datenbank gespeichert, nicht das eigentliche Passwort.
+
+Validierung: Wenn sich der Benutzer anmelden will, wird das eingegebene Passwort erneut gehasht und mit dem in der Datenbank gespeicherten Hash verglichen. Stimmen beide überein, ist die Anmeldung erfolgreich.
+
+Warum ist das so?
+
+Sicherheit: Wenn jemand unbefugt Zugang zur Datenbank bekommt, sieht er nur die unleserlichen Hashes und nicht die eigentlichen Passwörter.
+
+Einweg-Hashing: Ein guter Hashing-Algorithmus ist so gestaltet, dass man den ursprünglichen Text nicht aus dem Hash ableiten kann. Das macht es sicherer.
+
+Verifikation trotz Unleserlichkeit
+
+Auch wenn man den Hash kennt, kann man daraus nicht das Originalpasswort ableiten. Aber man kann ein eingegebenes Passwort durch den gleichen Hashing-Prozess schicken und prüfen, ob der resultierende Hash dem in der Datenbank gespeicherten Hash entspricht. Wenn ja, muss das eingegebene Passwort korrekt sein.
+
+In Spring
+
+In Spring kann man den BCryptPasswordEncoder verwenden, um Passwörter zu hashen und zu validieren.
+```java
+// Hashing
+        BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+        String hashedPassword = encoder.encode("plainPassword");
+// Validierung
+        boolean isPasswordMatch = encoder.matches("plainPassword",
+hashedPassword);
 ```
 
 ## Endpoints
