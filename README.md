@@ -124,7 +124,7 @@ Dokumentation
 - Angefangen die Endpoints zu Dokumentieren.
 
 DTO Dokumentation:
-```yaml
+```java
 @Data
 @Schema(description = "DTO für die Detailansicht einer ToDo-Liste") 
 public class ToDoListDetailDto {
@@ -173,7 +173,7 @@ public class ToDoListDetailDto {
 #### Aktivität:
 - Java Spring Security hizugefügt.
 - JJWT und Javax.xml.bind. Dependencies hinzugefügt.
-```java
+```yaml
 <dependency>
     <groupId>javax.xml.bind</groupId>
     <artifactId>jaxb-api</artifactId>
