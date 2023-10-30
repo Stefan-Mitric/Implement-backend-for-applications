@@ -323,14 +323,17 @@ Die Entwicklung der API basierte auf einer Reihe von Best Practices und Richtlin
 - Microsoft Azure Architecture Center: Präsentiert Hauptdesignprinzipien von RESTful APIs, einschließlich der Nutzung von Ressourcen und eindeutigen URIs für diese Ressourcen: 
 https://learn.microsoft.com/en-us/azure/architecture/best-practices/api-design
   
-- freeCodeCamp: Erläutert die Bedeutung von JSON als Standardformat für das Senden und Empfangen von Daten in APIs: 
+- freeCodeCamp: Erläutert die Bedeutung von JSON als Standardformat für das Senden und Empfangen von Daten in APIs:
+  https://www.freecodecamp.org/news/rest-api-best-practices-rest-endpoint-design-examples/
   
 - Stack Overflow Blog: Bietet eine Übersicht über Best Practices für REST API-Design, mit dem Ziel, APIs leicht verständlich, zukunftssicher, sicher und schnell zu gestalten:
-
+https://stackoverflow.blog/2020/03/02/best-practices-for-rest-api-design/
   
 - Swagger: Diskutiert Best Practices im API-Design und stellt Tools zur Dokumentation und Entwicklung von REST APIs zur Verfügung: 
+https://swagger.io/resources/articles/best-practices-in-api-design/
   
 - TechTarget: Listet 16 Best Practices und Richtlinien für das Design von REST APIs auf, die Funktionalität und Flexibilität verbessern sollen: 
+https://www.techtarget.com/searchapparchitecture/tip/16-REST-API-design-best-practices-and-guidelines
 
 Diese Materialien waren eine unverzichtbare Grundlage für die erfolgreiche Umsetzung der API und haben maßgeblich dazu beigetragen, den hohen Anforderungen an Sicherheit und Funktionalität gerecht zu werden.
 
