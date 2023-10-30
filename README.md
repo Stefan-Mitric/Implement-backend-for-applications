@@ -255,7 +255,57 @@ hashedPassword);
 
 ## Endpoints
 
+Die API stellt folgende Endpoints zur Verfügung:
+
+- `POST /auth/register`: Registrierung eines neuen Benutzers.
+- `POST /auth/login`: Authentifizierung eines Benutzers und Rückgabe eines JWT.
+- `GET /products`: Auflistung aller Produkte.
+- `POST /products`: Erstellung eines neuen Produkts (nur Admin).
+- `GET /products/{id}`: Abruf der Details eines Produkts.
+- `PUT /products/{id}`: Aktualisierung eines Produkts (nur Admin).
+- `DELETE /products/{id}`: Löschung eines Produkts (nur Admin).
+- `GET /categories`: Auflistung aller Kategorien.
+- `POST /categories`: Erstellung einer neuen Kategorie (nur Admin).
+- `GET /categories/{id}`: Details einer Kategorie anzeigen.
+- `PUT /categories/{id}`: Aktualisierung einer Kategorie (nur Admin).
+- `DELETE /categories/{id}`: Löschung einer Kategorie (nur Admin).
+
 ## OpenAPI
+
+
+Die OpenAPI-Spezifikation beschreibt die oben genannten Endpoints und die Strukturen der Anfrage- und Antwortdaten. Hier ein Auszug aus der Spezifikation:
+
+```yaml
+openapi: 3.0.0
+info:
+  title: Online-Shop API
+  version: "1.0"
+servers:
+  - url: https://api.onlineshop.com/v1
+paths:
+  /auth/login:
+    post:
+      summary: Authentifiziert einen Benutzer und gibt ein JWT zurück.
+      ...
+  /products:
+    get:
+      summary: Listet alle Produkte auf.
+      ...
+    post:
+      summary: Erstellt ein neues Produkt.
+      ...
+  ...
+components:
+  schemas:
+    Product:
+      type: object
+      ...
+    Category:
+      type: object
+      ...
+security:
+  - bearerAuth: []
+```
 
 ## Fazit
 
