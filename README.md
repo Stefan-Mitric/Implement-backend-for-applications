@@ -5,7 +5,7 @@
 - [Analyse](#analyse)
 - [Anforderungen](#anforderungen)
 - [Arbeitsjournal](#arbeitsjournal)
-- [Passwort verschlüsseln / entschlüsseln validieren](#passwort_verschlüsseln/entschlüsseln_validieren)
+- [Passwort verschlüsseln / entschlüsseln validieren](#passwort-verschlüsseln--entschlüsseln-validieren)
 - [Endpoints](#endpoints)
 - [OpenAPI](#openapi)
 - [Fazit](#fazit)
